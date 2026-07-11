@@ -58,7 +58,7 @@ export default function LoginLeftPanel() {
           </div>
 
           {/* Stats */}
-          <div className="mt-10 grid grid-cols-3 gap-4">
+          {/* <div className="mt-10 grid grid-cols-3 gap-4">
             <div className="rounded-2xl border border-white/20 bg-white/10 p-4 text-center backdrop-blur-xl">
               <h3 className="text-3xl font-bold">10K+</h3>
               <p className="mt-1 text-sm text-blue-100">Products</p>
@@ -73,7 +73,7 @@ export default function LoginLeftPanel() {
               <h3 className="text-3xl font-bold">99%</h3>
               <p className="mt-1 text-sm text-blue-100">Trust</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Features */}
