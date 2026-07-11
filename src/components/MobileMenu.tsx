@@ -38,14 +38,14 @@ const menuItems = [
     icon: Search,
   },
   {
-    name: "Add Item",
-    href: "/items/add",
+    name: "Add Product",
+    href: "/products/add",
     icon: PlusCircle,
     auth: true,
   },
   {
-    name: "Manage Items",
-    href: "/items/manage",
+    name: "Manage Products",
+    href: "/products/manage",
     icon: Settings,
     auth: true,
   },

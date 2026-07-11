@@ -71,17 +71,17 @@ export default function Navbar() {
           {user && (
             <>
               <Link
-                href="/items/add"
+                href="/products/add"
                 className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
               >
-                Add Item
+                Add Product
               </Link>
 
               <Link
-                href="/items/manage"
+                href="/products/manage"
                 className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
               >
-                Manage Items
+                Manage Products
               </Link>
             </>
           )}
