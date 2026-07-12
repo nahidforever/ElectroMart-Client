@@ -62,7 +62,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
+              className="text-sm font-medium text-slate-900 transition hover:text-blue-600"
             >
               {item.name}
             </Link>
@@ -72,14 +72,14 @@ export default function Navbar() {
             <>
               <Link
                 href="/products/add"
-                className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
+                className="text-sm font-medium text-slate-900 transition hover:text-blue-600"
               >
                 Add Product
               </Link>
 
               <Link
                 href="/products/manage"
-                className="text-sm font-medium text-slate-600 transition hover:text-blue-600"
+                className="text-sm font-medium text-slate-900 transition hover:text-blue-600"
               >
                 Manage Products
               </Link>

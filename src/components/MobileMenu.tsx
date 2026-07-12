@@ -201,7 +201,7 @@ export default function MobileMenu({ isLoggedIn }: { isLoggedIn: boolean }) {
                 rounded-xl
                 px-4
                 py-3
-                text-slate-700
+                text-slate-900
                 transition
                 hover:bg-blue-50
                 hover:text-blue-600

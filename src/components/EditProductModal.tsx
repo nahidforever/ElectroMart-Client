@@ -69,7 +69,7 @@ export default function EditProductModal({ product }: { product: Product }) {
       setLoading(true);
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URI}/products/${product._id}`,
+        `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products/${product._id}`,
         {
           method: "PATCH",
 

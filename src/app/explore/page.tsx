@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import ProductSkeleton from "@/components/ProductSkeleton";
 import ProductFilters from "@/components/ProductFilters";
@@ -10,26 +11,38 @@ import { Button } from "@/components/ui/button";
 
 interface Product {
   _id: string;
+
   title: string;
+
   brand: string;
+
   category: string;
+
   price: number;
+
   stock: number;
+
   condition: string;
+
   shortDescription: string;
+
   image: string;
 }
 
 export default function ExplorePage() {
+  const searchParams = useSearchParams();
+
+  // Category from URL
+
+  const initialCategory = searchParams.get("category") || "";
+
   const [products, setProducts] = useState<Product[]>([]);
 
   const [loading, setLoading] = useState(true);
 
-  // Filters
-
   const [search, setSearch] = useState("");
 
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(initialCategory);
 
   const [minPrice, setMinPrice] = useState("");
 
@@ -37,18 +50,21 @@ export default function ExplorePage() {
 
   const [sort, setSort] = useState("newest");
 
-  // Pagination
-
   const [page, setPage] = useState(1);
 
   const [totalPages, setTotalPages] = useState(1);
 
   const resetFilters = () => {
     setSearch("");
+
     setCategory("");
+
     setMinPrice("");
+
     setMaxPrice("");
+
     setSort("newest");
+
     setPage(1);
   };
 
@@ -125,8 +141,6 @@ export default function ExplorePage() {
         px-5
         "
       >
-        {/* Heading */}
-
         <div className="mb-10">
           <h1
             className="
@@ -148,39 +162,39 @@ export default function ExplorePage() {
           </p>
         </div>
 
-        {/* Filters */}
-
         <ProductFilters
           search={search}
           setSearch={(value) => {
             setPage(1);
+
             setSearch(value);
           }}
           category={category}
           setCategory={(value) => {
             setPage(1);
+
             setCategory(value);
           }}
           minPrice={minPrice}
           setMinPrice={(value) => {
             setPage(1);
+
             setMinPrice(value);
           }}
           maxPrice={maxPrice}
           setMaxPrice={(value) => {
             setPage(1);
+
             setMaxPrice(value);
           }}
           sort={sort}
           setSort={(value) => {
             setPage(1);
+
             setSort(value);
           }}
-          
           resetFilters={resetFilters}
         />
-
-        {/* Product Grid */}
 
         <div
           className="
@@ -202,29 +216,26 @@ export default function ExplorePage() {
           ) : (
             <div
               className="
-                col-span-full
-                py-20
-                text-center
-                text-slate-500
-                "
+            col-span-full
+            py-20
+            text-center
+            text-slate-500
+            "
             >
               No products found
             </div>
           )}
         </div>
 
-        {/* Pagination */}
-
         {totalPages > 1 && (
           <div
             className="
-              mt-12
-              flex
-              flex-wrap
-              items-center
-              justify-center
-              gap-3
-              "
+            mt-12
+            flex
+            flex-wrap
+            justify-center
+            gap-3
+            "
           >
             <Button
               disabled={page === 1}

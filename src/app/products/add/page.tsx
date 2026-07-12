@@ -34,7 +34,7 @@ export default function AddProductPage() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URI}/products`,
+        `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products`,
         {
           method: "POST",
 

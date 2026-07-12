@@ -37,7 +37,7 @@ export default function DeleteProductButton({ id, title }: Props) {
       setLoading(true);
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URI}/products/${id}`,
+        `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products/${id}`,
         {
           method: "DELETE",
         },
