@@ -26,6 +26,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { authClient } from "@/lib/auth-client";
 
 interface Product {
   _id: string;
@@ -65,6 +66,8 @@ export default function EditProductModal({ product }: { product: Product }) {
 
     const updatedProduct = Object.fromEntries(formData.entries());
 
+    const { data: tokenData } = await authClient.token();
+
     try {
       setLoading(true);
 
@@ -75,6 +78,7 @@ export default function EditProductModal({ product }: { product: Product }) {
 
           headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${tokenData?.token}`,
           },
 
           body: JSON.stringify(updatedProduct),

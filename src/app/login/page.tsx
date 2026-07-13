@@ -15,6 +15,7 @@ import LoginLeftPanel from "@/components/LoginLeftPanel";
 
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -56,6 +57,12 @@ export default function LoginPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -191,11 +198,12 @@ export default function LoginPage() {
                 {/* Google */}
 
                 <Button
-                  type="button"
                   variant="outline"
-                  className="h-12 w-full rounded-xl border-slate-300 hover:bg-slate-50"
+                  onClick={handleGoogleSignIn}
+                  className="h-12 w-full rounded-xl border-slate-300 hover:bg-slate-50 flex items-center justify-center gap-2"
                 >
-                  Continue with Google
+                  <FcGoogle size={22} />
+                  <span>Continue with Google</span>
                 </Button>
               </form>
 

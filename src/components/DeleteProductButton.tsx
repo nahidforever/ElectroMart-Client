@@ -21,6 +21,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { authClient } from "@/lib/auth-client";
 
 interface Props {
   id: string;
@@ -33,6 +34,9 @@ export default function DeleteProductButton({ id, title }: Props) {
   const [loading, setLoading] = useState(false);
 
   async function handleDelete() {
+  
+    const { data: tokenData } = await authClient.token();
+
     try {
       setLoading(true);
 
@@ -40,6 +44,9 @@ export default function DeleteProductButton({ id, title }: Props) {
         `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products/${id}`,
         {
           method: "DELETE",
+          headers: {
+            authorization: `Bearer ${tokenData?.token}`,
+          },
         },
       );
 

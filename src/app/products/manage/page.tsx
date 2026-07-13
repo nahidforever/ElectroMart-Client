@@ -1,4 +1,6 @@
 import ManageProductTable from "@/components/ManageProductTable";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 interface Product {
   _id: string;
@@ -23,8 +25,17 @@ interface Product {
 }
 
 async function getProducts() {
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products`,
+    {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    },
   );
 
   if (!res.ok) {

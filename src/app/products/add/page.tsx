@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { authClient } from "@/lib/auth-client";
 
 export default function AddProductPage() {
   const [loading, setLoading] = useState(false);
@@ -32,6 +33,8 @@ export default function AddProductPage() {
 
     const product = Object.fromEntries(formData.entries());
 
+    const { data: tokenData } = await authClient.token();
+
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URI}/manage/products`,
@@ -40,6 +43,7 @@ export default function AddProductPage() {
 
           headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${tokenData?.token}`,
           },
 
           body: JSON.stringify(product),

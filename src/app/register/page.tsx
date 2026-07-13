@@ -14,6 +14,7 @@ import {
   Smartphone,
   Loader2,
 } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -71,6 +72,12 @@ export default function RegisterPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -217,11 +224,12 @@ export default function RegisterPage() {
                 {/* Google Button */}
 
                 <Button
-                  type="button"
                   variant="outline"
-                  className="h-12 w-full rounded-xl border-slate-300 hover:bg-slate-50"
+                  onClick={handleGoogleSignIn}
+                  className="h-12 w-full rounded-xl border-slate-300 hover:bg-slate-50 flex items-center justify-center gap-2"
                 >
-                  Continue with Google
+                  <FcGoogle size={22} />
+                  <span>Continue with Google</span>
                 </Button>
               </form>
 
