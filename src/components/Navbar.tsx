@@ -49,7 +49,7 @@ export default function Navbar() {
               ElectroMart
             </h1>
 
-            <p className="hidden text-xstext-slate-500 sm:block">
+            <p className="hidden text-xs text-slate-700 sm:block">
               Your Trusted Electronics Marketplace
             </p>
           </div>
