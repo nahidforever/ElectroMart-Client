@@ -73,11 +73,18 @@ export default function AddProductPage() {
       <div className="mx-auto max-w-4xl px-5">
         {/* Heading */}
 
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-slate-900">Add New Product</h1>
+        <div className="mb-10 rounded-2xl px-5 py-8 text-center sm:px-8 sm:py-10">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+            Product Management
+          </p>
 
-          <p className="mt-2 text-slate-500">
-            Publish your electronic product on ElectroMart.
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Add a New Product
+          </h1>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
+            Provide accurate product information to create a new listing on
+            ElectroMart.
           </p>
         </div>
 

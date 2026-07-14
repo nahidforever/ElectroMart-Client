@@ -141,24 +141,18 @@ export default function ExplorePage() {
         px-5
         "
       >
-        <div className="mb-10">
-          <h1
-            className="
-            text-4xl
-            font-bold
-            text-slate-900
-            "
-          >
-            Explore Products
+        <div className="mb-10 rounded-2xl px-5 py-8 text-center sm:px-8 sm:py-10">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+            Product Marketplace
+          </p>
+
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Explore Our Electronics
           </h1>
 
-          <p
-            className="
-            mt-2
-            text-slate-500
-            "
-          >
-            Find your favorite electronics from ElectroMart
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
+            Browse new and used electronics and find the right product for your
+            needs.
           </p>
         </div>
 

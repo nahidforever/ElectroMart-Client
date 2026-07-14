@@ -65,24 +65,18 @@ export default async function ManageProductsPage() {
         px-5
         "
       >
-        <div className="mb-10">
-          <h1
-            className="
-            text-4xl
-            font-bold
-            text-slate-900
-            "
-          >
-            Manage Products
+        <div className="mb-10 rounded-2xl px-5 py-8 text-center sm:px-8 sm:py-10">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+            Product Management
+          </p>
+
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Manage Your Products
           </h1>
 
-          <p
-            className="
-            mt-2
-            text-slate-500
-            "
-          >
-            Manage your available products
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
+            View, update and remove your available product listings from one
+            place.
           </p>
         </div>
 
