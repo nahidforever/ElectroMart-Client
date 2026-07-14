@@ -18,9 +18,12 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function AddProductPage() {
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,6 +62,10 @@ export default function AddProductPage() {
       toast.success("Product added successfully");
 
       form.reset();
+
+      router.push("/products/manage");
+
+      router.refresh();
     } catch (error) {
       console.log(error);
 

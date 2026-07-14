@@ -1,4 +1,5 @@
 import ManageProductTable from "@/components/ManageProductTable";
+import ProductOverviewChart from "@/components/ProductOverviewChart";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
@@ -79,6 +80,8 @@ export default async function ManageProductsPage() {
             place.
           </p>
         </div>
+
+        <ProductOverviewChart products={products} />
 
         <ManageProductTable products={products} />
       </div>
