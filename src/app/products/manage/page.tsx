@@ -81,7 +81,7 @@ export default async function ManageProductsPage() {
           </p>
         </div>
 
-        <ProductOverviewChart products={products} />
+        {products.length > 0 && <ProductOverviewChart products={products} />}
 
         <ManageProductTable products={products} />
       </div>
