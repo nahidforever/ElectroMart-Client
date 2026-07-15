@@ -372,8 +372,6 @@ electromart/
 
 ## Author
 
-**Your Name**
-
 - GitHub: https://github.com/nahidforever
 - LinkedIn: https://www.linkedin.com/in/nahidforever/
 - Email: n.i.nahid02@gmail.com
