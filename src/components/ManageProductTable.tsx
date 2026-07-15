@@ -33,6 +33,19 @@ export default function ManageProductTable({
 }: {
   products: Product[];
 }) {
+  if (products.length === 0) {
+    return (
+      <div className="rounded-2xl bg-white px-6 py-16 text-center shadow-md sm:rounded-3xl sm:px-8 sm:py-20">
+        <h2 className="text-xl font-semibold text-slate-800 sm:text-2xl">
+          No Products Yet
+        </h2>
+
+        <p className="mx-auto mt-3 max-w-md text-sm text-slate-500 sm:text-base">
+          Add your first product to see it here.
+        </p>
+      </div>
+    );
+  }
   return (
     <div className="overflow-hidden rounded-3xl bg-white shadow-md">
       <div className="overflow-x-auto">
